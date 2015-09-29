@@ -1,0 +1,73 @@
+/* stack and queue using array difference */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+/* linked list node struct */
+struct node {
+    int data;
+    struct node *next;
+};
+
+/* for stack we use push and pop operation and for Queue we use enqueue/dequeue
+   Stack is LIFO: Last In First Out 
+   Queue is FIFO: First In First Out
+/*
+
+// stack
+
+Push(int x)
+{
+   stuct node *temp = (strcut node *) malloc(sizeof(struct node));
+   if (head == NULL)
+   {
+       head = temp;
+       temp->data = x;
+       temp->next = NULL;
+       return;
+   }  
+   temp->data = x;
+   temp->next = head;
+   head = temp;
+}
+
+Pop()
+{
+   struct node *temp = head;
+   head = temp->next;
+   free(temp);
+}   
+
+//queue
+
+struct node * rear = NULL;
+struct node * front = NULL;
+
+Enqueue(int x)
+{
+    struct node *temp = (struct node*)malloc (sizeof(struct node));
+    temp->data = x;
+    temp->next = NULL;
+    if (font == NULL) && (rear == NULL)
+    {
+        front = rear = temp;
+        return;
+    }
+    rear->next = temp;
+    
+}
+
+Dequeue(int x)
+{
+    if (front == NULL) return;
+    struct node *temp = front;
+    if (front == rear)
+    {
+        front = rear = NULL;
+    }    
+    else
+    {
+        front = front->next;
+    }
+    free(temp);
+}
