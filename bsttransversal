@@ -1,0 +1,41 @@
+
+
+// bst transversal
+
+#include<dtdio.h>
+#include<stdlib.h>
+
+Struct node
+{
+    int data;
+    struct node *left;
+    struct node *right;
+}
+
+Preorder(struct node *head)
+{
+    if (root == NULL)
+    return;
+    printf("%d", root->data);
+    preorder(root->left);
+    preorder(root->right);
+}
+
+Inorder(struct node *root)
+{
+    if (root == NULL)
+    return;
+    Inorder(root->left);
+    printf("%d", root->data);
+    Inorder(root->right);
+}
+
+Postorder(stuct noide *root)
+{
+    if (root == NULL)
+    return;
+    Postorder(root->left);
+    Postorder(root->right);
+    printf("%d", root->data);
+}
+
